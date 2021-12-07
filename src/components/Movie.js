@@ -7,9 +7,9 @@ const Movie = (props) => {
     const { push } = useHistory();
 
 
-    const movies = [props.movies];
+    const { movies } = props
 
-    console.log(props.movies)
+    console.log(movies)
     const movie = movies.find(movie=>movie.id===Number(id));
     
     return(<div className="modal-page col">
@@ -57,4 +57,4 @@ const mapStateToProps = (state) => {
     })
   }
 
-export default connect(mapStateToProps, {})(Movie);
+export default connect(mapStateToProps)(Movie);
