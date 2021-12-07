@@ -10,7 +10,7 @@ const Movie = (props) => {
 
     const { movies } = props
 
-    console.log(movies)
+  
     const movie = movies.find(movie=>movie.id===Number(id));
     
     return(<div className="modal-page col">
@@ -19,6 +19,7 @@ const Movie = (props) => {
                 <div className="modal-header">						
                     <h4 className="modal-title">{movie.title} Details</h4>
                 </div>
+                {console.log(movie)}
                 <div className="modal-body">
                     <div className="flexContainer">
 
@@ -43,7 +44,7 @@ const Movie = (props) => {
                         
                         <section>
                             <span className="m-2 btn btn-dark">Favorite</span>
-                            <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete"/></span>
+                            <span onClick={() => props.deleteMovie(movie.id)} className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete"/></span>
                         </section>
                     </div>
                 </div>
